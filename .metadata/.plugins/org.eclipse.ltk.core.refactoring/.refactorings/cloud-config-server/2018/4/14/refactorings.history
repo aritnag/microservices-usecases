@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;cloud-config-server&apos;&#x0D;&#x0A;- Original project: &apos;cloud-config-server&apos;&#x0D;&#x0A;- Original element: &apos;cloud-config-server.properties&apos;" description="Delete element" element1="git-local-config-repo/cloud-config-server.properties" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1522853752575" subPackages="false" version="1.0"/>
+</session>

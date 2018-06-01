@@ -1,0 +1,26 @@
+package com.restful.microservices.example;
+
+
+public class JiraApiIntegrationApplicationTests {
+
+	public static void main(String [] args){
+		int i=check();
+		System.out.println(i);
+	}
+
+	private static int check() {
+		try{
+			System.out.println("fd");
+			System.exit(0);
+			return 1;
+		}catch(Exception e){
+			System.out.println("fddd");
+			
+			return 2;
+		}finally{
+			System.out.println("fdsadasd");
+
+			return 3;
+		}
+	}
+}

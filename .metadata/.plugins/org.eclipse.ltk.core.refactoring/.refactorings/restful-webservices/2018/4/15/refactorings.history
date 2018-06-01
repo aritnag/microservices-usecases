@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;PostController.java&apos; to &apos;dropbox-cloud-poc/src/main/java/com.restful.microservices.example.controller&apos;&#x0D;&#x0A;- Original project: &apos;restful-webservices&apos;&#x0D;&#x0A;- Destination element: &apos;dropbox-cloud-poc/src/main/java/com.restful.microservices.example.controller&apos;&#x0D;&#x0A;- Original element: &apos;com.microservices.poc.restfulwebservices.controller.PostController.java&apos;" description="Copy compilation unit" destination="=dropbox-cloud-poc/src\/main\/java&lt;com.restful.microservices.example.controller" element1="/src\/main\/java&lt;com.microservices.poc.restfulwebservices.controller{PostController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1523548612178" units="1" version="1.0"/>
+</session>

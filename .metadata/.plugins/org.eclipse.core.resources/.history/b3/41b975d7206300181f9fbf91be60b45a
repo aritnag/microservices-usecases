@@ -1,0 +1,45 @@
+git-lfs/2.3.0 (GitHub; windows amd64; go 1.8.3; git 4dd2bf73)
+git version 2.14.1.windows.1
+
+$ git-lfs clone --recursive --progress --progress -- https://github.com/aritnag/awsxraymicroservices.git C:\Users\aritnag\Downloads\microservicesxraydemo\awsxraymicroservices
+Could not pull
+
+Git can't resolve ref: "HEAD"
+
+Current time in UTC: 
+2018-05-29 07:54:43
+
+ENV:
+LocalWorkingDir=C:\Users\aritnag\Downloads\microservicesxraydemo\awsxraymicroservices
+LocalGitDir=C:\Users\aritnag\Downloads\microservicesxraydemo\awsxraymicroservices\.git
+LocalGitStorageDir=C:\Users\aritnag\Downloads\microservicesxraydemo\awsxraymicroservices\.git
+LocalMediaDir=C:\Users\aritnag\Downloads\microservicesxraydemo\awsxraymicroservices\.git\lfs\objects
+LocalReferenceDir=
+TempDir=C:\Users\aritnag\Downloads\microservicesxraydemo\awsxraymicroservices\.git\lfs\tmp
+ConcurrentTransfers=3
+TusTransfers=false
+BasicTransfersOnly=false
+SkipDownloadErrors=false
+FetchRecentAlways=false
+FetchRecentRefsDays=7
+FetchRecentCommitsDays=0
+FetchRecentRefsIncludeRemotes=true
+PruneOffsetDays=3
+PruneVerifyRemoteAlways=false
+PruneRemoteName=origin
+LfsStorageDir=C:\Users\aritnag\Downloads\microservicesxraydemo\awsxraymicroservices\.git\lfs
+AccessDownload=none
+AccessUpload=none
+DownloadTransfers=basic
+UploadTransfers=basic
+GIT_ASKPASS=C:\Users\aritnag\AppData\Local\GitHubDesktop\app-1.0.0\resources\app\static\ask-pass-trampoline.bat
+GIT_CONFIG_PARAMETERS='credential.helper='
+GIT_EXEC_PATH=C:\Users\aritnag\AppData\Local\GitHubDesktop\app-1.0.0\resources\app\git\mingw64\libexec\git-core
+GIT_TERMINAL_PROMPT=0
+LOCAL_GIT_DIRECTORY=C:\Users\aritnag\AppData\Local\GitHubDesktop\app-1.0.0\resources\app\git
+
+Client IP addresses:
+fe80::c904:b127:176a:68f0 10.104.24.98
+fe80::acd3:77fc:e8be:6510 192.168.56.1
+fe80::9cde:6b81:4cc9:c57e 192.168.11.1
+fe80::6927:77c5:4899:3959 10.142.161.120

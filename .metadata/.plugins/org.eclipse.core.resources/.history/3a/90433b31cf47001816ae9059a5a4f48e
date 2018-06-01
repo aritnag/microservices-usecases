@@ -1,0 +1,37 @@
+package com.restful.microservices.example;
+
+import java.util.List;
+
+public class JiraApiIntegrationApplicationTests {
+
+	public static void main(String [] args){
+		float f= 1.00f/0.00f;
+		System.out.println(f);
+		int i=check();
+		System.out.println(i);
+	}
+
+	private static int check() {
+		try{
+			System.out.println("fd");
+			return 1;
+		}catch(Exception e){
+			System.out.println("fddd");
+			
+			return 2;
+		}finally{
+			System.exit(0);
+			System.out.println("fdsadasd");
+			return 3;
+		}
+	}
+	
+	public static <E> void append(List<E> list){
+		E elem=new E();
+		list.add(elem);
+	}
+}
+
+class E{
+	
+}

@@ -1,0 +1,64 @@
+package com.restful.microservices.example.service.impl;
+
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.ribbon.proxy.annotation.Hystrix;
+import com.restful.microservices.example.proxy.CurrencyConversionServiceProxy;
+import com.restful.microservices.example.response.ConversionValue;
+import com.restful.microservices.example.service.CurrencyConversionService;
+
+@Service
+public class CurrencyConversionServiceImpl implements CurrencyConversionService {
+
+	@Autowired
+	private CurrencyConversionServiceProxy feignProxy;
+
+	@Override
+	public ConversionValue findFromAndToByQuantity(String from, String to, BigDecimal quantity) {
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "application/json");
+		HttpEntity<?> requestEntity = new HttpEntity<>(headers);
+		Map<String,String> uriVariables=new HashMap<>();
+		uriVariables.put("from", from);
+		uriVariables.put("to", to);
+		final ResponseEntity<ConversionValue> response = (ResponseEntity<ConversionValue>) restTemplate.exchange(
+				"http://localhost:8000/currencyexchange/retrieveExchangeValue/from/{from}/to/{to}", HttpMethod.GET, requestEntity,
+				ConversionValue.class,uriVariables);
+
+		ConversionValue responseBody=new ConversionValue();
+		BeanUtils.copyProperties(response.getBody(), responseBody);
+		responseBody.setConversionMultiple(response.getBody().getConversionMultiple());
+		responseBody.setQuantity(quantity);
+		responseBody.setTotalCalculatedAmount(quantity.multiply(responseBody.getConversionMultiple()));
+		return responseBody;
+	}
+	
+	
+	@Override
+	@HystrixCommand(fallbackMethod="findFromAndToByQuantity")
+	public ConversionValue findFromAndToByQuantityFeign(String from, String to, BigDecimal quantity) {
+		ConversionValue responseBody=feignProxy.retrieveExchangeValue(from, to);
+		BeanUtils.copyProperties(responseBody, responseBody);
+		//responseBody.setConversionMultiple(response.getBody().getConversionMultiple());
+		responseBody.setQuantity(quantity);
+		responseBody.setTotalCalculatedAmount(quantity.multiply(responseBody.getConversionMultiple()));
+		return responseBody;
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.aws.xray.demo.microservicesxraydemo.controller;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.aws.xray.demo.microservicesxraydemo.response.Product;
+import com.aws.xray.demo.microservicesxraydemo.service.ProductService;
+import com.aws.xray.demo.microservicesxraydemo.service.response.ProductResponse;
+
+@RestController
+@RequestMapping("/db")
+public class ProductServiceDatabaseController {
+
+	@Autowired
+	private ProductService productService;
+	@RequestMapping(value = { "/listProducts" }, method = RequestMethod.GET)
+	public Object listAllProducts() {
+		List<ProductResponse> listProducts=productService.listAllProducts();
+		listProducts.forEach(p -> p.setPort((deployedPort = environment.getProperty("server.port")) == null ? deployedPort
+					: environment.getProperty("local.server.port")));
+		return listProducts;
+	}
+	
+	@RequestMapping(value = { "/addProduct" }, method = RequestMethod.POST)
+	public Object addProduct(@RequestBody Product product) {
+		return productService.saveProduct(product);
+	}
+	
+	@RequestMapping(value = { "/deleteProduct" }, method = RequestMethod.POST)
+	public Object deleteProduct(@RequestBody Product product) {
+		return productService.deleteProduct(product);
+	}
+}

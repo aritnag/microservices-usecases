@@ -1,0 +1,10 @@
+223f460d-dd87-4f00-a831-3c8c4792505d\:credentialProfileName=Private S3 Bucket Example
+cognitoIdentityId=us-east-1\:1d87d88c-a4fa-456b-92b9-203a218e17dc
+cognitoIdentityPoolId=us-east-1\:d4fdc07f-94fd-4cc6-94fb-f903657f05c1
+credentialProfileAccountIds=ddfd84fc-da10-4b1e-8239-748e1c4fda68|223f460d-dd87-4f00-a831-3c8c4792505d
+currentAccount=ddfd84fc-da10-4b1e-8239-748e1c4fda68
+currentDefaultAccount=ddfd84fc-da10-4b1e-8239-748e1c4fda68
+ddfd84fc-da10-4b1e-8239-748e1c4fda68\:credentialProfileName=default
+defaultRegion=us-east-1
+ec2PreferencesImported=true
+eclipse.preferences.version=1

@@ -1,0 +1,12 @@
+package snippet;
+
+public class Snippet {
+	public static void main(String[] args) {
+		<dependency>
+		  <groupId>com.amazonaws</groupId>
+		  <artifactId>aws-xray-recorder-sdk-core</artifactId>
+		  <version>1.2.1</version>
+		</dependency>
+	}
+}
+

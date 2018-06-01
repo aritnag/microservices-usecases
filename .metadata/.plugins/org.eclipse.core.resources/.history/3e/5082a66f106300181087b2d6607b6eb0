@@ -1,0 +1,15 @@
+package com.spring.boot.cart.application.config;
+
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+
+import com.spring.boot.cart.application.CartApplicationUsingSpringBootApplication;
+
+public class ServletInitializer extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(CartApplicationUsingSpringBootApplication.class);
+	}
+
+}

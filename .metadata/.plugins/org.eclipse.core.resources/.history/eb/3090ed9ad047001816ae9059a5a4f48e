@@ -1,0 +1,25 @@
+package com.restful.microservices.example;
+
+import java.util.List;
+
+public class JiraApiIntegrationApplicationTests extends E {
+
+	E display(int i){
+		System.out.println("dddddd");
+		return null;
+	}
+	
+	public static void main(String [] args){
+		
+	}
+
+	
+	
+}
+
+class E{
+	JiraApiIntegrationApplicationTests display(int i){
+		System.out.println("ddd");
+		return null;
+	}
+}

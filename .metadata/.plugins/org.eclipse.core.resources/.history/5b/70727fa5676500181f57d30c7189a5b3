@@ -1,0 +1,55 @@
+package com.aws.xray.demo.microservicesxraydemo.controller;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.aws.xray.demo.microservicesxraydemo.response.Product;
+import com.aws.xray.demo.microservicesxraydemo.service.ProductService;
+import com.aws.xray.demo.microservicesxraydemo.service.response.ProductResponse;
+
+@RestController
+@RequestMapping("/db")
+public class ProductServiceDatabaseController {
+
+	@Autowired
+	private ProductService productService;
+	
+	@Autowired
+	Environment environment;
+	
+	
+	@RequestMapping(value = { "/listProducts" }, method = RequestMethod.GET)
+	public Object listAllProducts() {
+		List<ProductResponse> listProducts = productService.listAllProducts();
+		listProducts.forEach(p -> p.setPort(Integer.parseInt(Optional.ofNullable(environment.getProperty("server.port"))
+				.orElse(environment.getProperty("local.server.port")))));
+		return listProducts;
+	}
+	
+	@RequestMapping(value = { "/addProduct" }, method = RequestMethod.POST)
+	public Object addProduct(@RequestBody Product product) {
+		return productService.saveProduct(product);
+	}
+	
+	@RequestMapping(value = { "/deleteProduct" }, method = RequestMethod.POST)
+	public Object deleteProduct(@RequestBody Product product) {
+		return productService.deleteProduct(product);
+	}
+	
+	@RequestMapping(value = { "/getproduct/{id}" }, method = RequestMethod.GET)
+	public ProductResponse getProduct(@PathVariable String id) {
+		ProductResponse product = productService.getProduct(id);
+		product.setPort(Integer.parseInt(Optional.ofNullable(environment.getProperty("server.port"))
+				.orElse(environment.getProperty("local.server.port"))));
+		return product;
+	}
+}

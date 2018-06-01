@@ -1,0 +1,5 @@
+package com.microservices.poc.restfulwebservices.controller;
+
+public class UserController {
+
+}

@@ -1,0 +1,31 @@
+package com.restful.microservices.example;
+
+import java.util.List;
+
+public class JiraApiIntegrationApplicationTests extends Thread {
+
+	public void start(){
+		System.out.println("dd");
+	}
+	public void run(){
+		System.out.println("dddd");
+	}
+	public static void main(String [] args){
+		JiraApiIntegrationApplicationTests k=new JiraApiIntegrationApplicationTests();
+		JiraApiIntegrationApplicationTests j=new JiraApiIntegrationApplicationTests();
+		k.start();
+		k.start();
+		
+		StringBuffer sb=new StringBuffer("a");
+		sb.append("12345678912345678");
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+	}
+
+	
+	
+}
+
+class E{
+	
+}

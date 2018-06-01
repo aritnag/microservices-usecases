@@ -1,0 +1,13 @@
+package com.microservices.poc.restfulwebservices;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+		String x=new String("Test");
+		String y="Test";
+		System.out.println(x==y);
+		System.out.println(x.equals(y));
+		
+	}
+
+}

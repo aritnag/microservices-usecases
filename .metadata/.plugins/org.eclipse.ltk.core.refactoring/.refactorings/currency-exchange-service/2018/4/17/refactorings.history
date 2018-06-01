@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;data.sql&apos; to &apos;product-service-database/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;currency-exchange-service&apos;&#x0D;&#x0A;- Destination element: &apos;product-service-database/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;data.sql&apos;" description="Copy file" destination="=product-service-database/src\/main\/resources" element1="src/main/resources/data.sql" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1524751682133" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+package com.aws.xray.demo.microservicesxraydemo.config;
+
+public class XRayConfiguration {
+
+}

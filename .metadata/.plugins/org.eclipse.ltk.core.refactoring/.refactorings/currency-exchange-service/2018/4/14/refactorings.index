@@ -1,0 +1,13 @@
+1522918954464	Copy package
+1522918975419	Rename type 'CurrencyExchangeServiceApplication'
+1522919626020	Encapsulate field 'port'
+1522935129110	Copy package
+1522942801359	Copy package
+1522942806912	Delete element
+1522943002325	Rename package 'com.microservices.poc.restfulwebservices.service'
+1522943013529	Rename package 'com.microservices.poc.restfulwebservices.service.impl'
+1522943073706	Delete elements
+1522943078624	Copy compilation unit
+1522943086188	Rename type 'CurrencyExchangeService'
+1522943089047	Delete elements
+1522943939001	Copy packages

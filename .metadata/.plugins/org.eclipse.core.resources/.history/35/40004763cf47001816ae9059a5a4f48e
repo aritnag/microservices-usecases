@@ -1,0 +1,17 @@
+package com.restful.microservices.example;
+
+import java.util.List;
+
+public class JiraApiIntegrationApplicationTests extends Thread {
+
+	public static void main(String [] args){
+		
+	}
+
+	
+	
+}
+
+class E{
+	
+}

@@ -1,0 +1,6 @@
+1524639659988	Rename package 'com.restful.microservices.service'
+1524654064190	Encapsulate field 'bugNumber'
+1524715397198	Delete element
+1524719763152	Extract method 'getIssueObject'
+1524719797606	Extract method 'invokeJiraRestClient'
+1524720112639	Extract Class...
