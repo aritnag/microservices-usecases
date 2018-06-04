@@ -11,4 +11,5 @@ public interface ProductService {
 	public Long saveProduct(Product product);
 	public boolean deleteProduct(Product product);
 	public List<ProductResponse> listAllProducts();
+	public ProductResponse getProduct(String id);
 }

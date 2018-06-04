@@ -5,7 +5,7 @@ package com.microservices.poc.restfulwebservices.exception;
 
 import java.util.Date;
 
-import org.apache.http.HttpHeaders;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -35,7 +35,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 	}
 	
 	protected ResponseEntity<Object> handleMethodArgumentException(MethodArgumentNotValidException ex,HttpHeaders headers,
-			org.apache.http.HttpStatus stats,WebRequest web){
+			HttpStatus stats,WebRequest web){
 		 ExceptionResponse expResp= new ExceptionResponse(new Date(), ex.getMessage(), ex.getBindingResult().toString());
 		 return new ResponseEntity<>(expResp, HttpStatus.BAD_REQUEST);
 	}

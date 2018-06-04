@@ -1,10 +1,10 @@
 package com.restful.microservices.example.response;
 
-public class Product {
-	private String productName;
-	private String productType;
-	private int port;
-	
+import org.springframework.hateoas.ResourceSupport;
+
+public class Product extends ResourceSupport{
+	private String productId;
+	 
 	/**
 	 * @return the productName
 	 */
@@ -41,4 +41,15 @@ public class Product {
 	public void setPort(int port) {
 		this.port = port;
 	}
+	public String getProductId() {
+		return productId;
+	}
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+	private String productName;
+	private String productType;
+	private int port;
+	
+
 }

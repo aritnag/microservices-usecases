@@ -1,19 +1,10 @@
 package com.restful.microservices.example.service.response;
 
-public class ProductResponse {
-	private Long id;
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
+import org.springframework.hateoas.ResourceSupport;
+
+public class ProductResponse  extends ResourceSupport{
+	private String productId;
+	 
 	/**
 	 * @return the productName
 	 */
@@ -49,6 +40,12 @@ public class ProductResponse {
 	 */
 	public void setPort(int port) {
 		this.port = port;
+	}
+	public String getProductId() {
+		return productId;
+	}
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 	private String productName;
 	private String productType;

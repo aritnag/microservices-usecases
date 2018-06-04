@@ -27,10 +27,7 @@ public class ProductService {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "application/json");
 		HttpEntity<?> requestEntity = new HttpEntity<>(headers);
-		/*final ResponseEntity<Product> response = (ResponseEntity<Product>) restTemplate.exchange(
-				"http://localhost:8000/db/getAllProducts", HttpMethod.GET, requestEntity,
-				Product.class);*/
-		final ResponseEntity<Product[]> responseEntity = restTemplate.getForEntity("http://localhost:8000/db/listProducts", Product[].class);
+		final ResponseEntity<Product[]> responseEntity = restTemplate.getForEntity("http://localhost:8000/db/listproducts", Product[].class);
 		Product[] objects = responseEntity.getBody();
 		MediaType contentType = responseEntity.getHeaders().getContentType();
 		HttpStatus statusCode = responseEntity.getStatusCode();

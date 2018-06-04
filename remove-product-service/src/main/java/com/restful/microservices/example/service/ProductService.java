@@ -30,7 +30,7 @@ public class ProductService {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "application/json");
 		final ResponseEntity<Product[]> responseEntity = restTemplate
-				.getForEntity("http://localhost:8000/db/listProducts", Product[].class);
+				.getForEntity("http://localhost:8000/db/listproducts", Product[].class);
 		Product[] objects = responseEntity.getBody();
 		MediaType contentType = responseEntity.getHeaders().getContentType();
 		HttpStatus statusCode = responseEntity.getStatusCode();
@@ -45,7 +45,7 @@ public class ProductService {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity<String> entity = new HttpEntity<String>(gson.toJson(product), headers);
-		String answer = restTemplate.postForObject("http://localhost:8000/db/deleteProduct", entity, String.class);
+		String answer = restTemplate.postForObject("http://localhost:8000/db/deleteproduct", entity, String.class);
 		System.out.println(answer);
 		return this.getAllProducts();
 	}
